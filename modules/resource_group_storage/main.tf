@@ -15,14 +15,4 @@ resource "azurerm_storage_account" "main" {
 
   min_tls_version           = "TLS1_2"
   enable_https_traffic_only = true
-
-  tags = var.tags
-}
-
-resource "azurerm_storage_container" "main" {
-  count = var.create_container ? 1 : 0
-
-  name                  = var.container_name
-  storage_account_name  = azurerm_storage_account.main.name
-  container_access_type = "private"
 }
