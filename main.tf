@@ -1,4 +1,24 @@
-module "storage" {
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "3.105.0"
+    }
+  }
+
+  backend "azurerm" {
+    resource_group_name  = "tfstate-rg"
+    storage_account_name = "tfstatestorage"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+
+module "resource_group_storage" {
   source  = "Yevgene-DP/resource_group_storage/azurerm"
   version = "1.0.0"
 
