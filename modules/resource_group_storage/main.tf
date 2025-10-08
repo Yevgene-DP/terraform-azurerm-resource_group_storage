@@ -13,7 +13,6 @@ resource "azurerm_storage_account" "main" {
   account_replication_type = var.account_replication_type
   account_kind             = var.account_kind
 
-  min_tls_version           = "TLS1_2"
-  enable_https_traffic_only = true
+  min_tls_version = "TLS1_2"
 }
 
