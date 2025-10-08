@@ -16,3 +16,4 @@ resource "azurerm_storage_account" "main" {
   min_tls_version           = "TLS1_2"
   enable_https_traffic_only = true
 }
+
