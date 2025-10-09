@@ -27,7 +27,7 @@ module "resource_group_storage" {
   storage_account_name = "stterraformex123"
   create_container     = true
   container_name       = "terraform-files"
-  
+
 
   tags = {
     Environment = "Development"
